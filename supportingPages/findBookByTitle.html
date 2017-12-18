@@ -1,0 +1,30 @@
+<div ng-controller="authorListCtrl">
+    <div class="panel-heading">
+        <h3>
+            <p>Find a book by title:<input type="text" class="form-control" ng-model="bookTitleForFinding"></p>
+            <button type="button" class="btn btn-default" ng-click="closeForm()">Cancel</button>
+        </h3>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Author name</th>
+            <th>Second name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+            <th>Book title</th>
+            <th>Book genre</th>
+            <th>Number of page in book</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="item in bookWhitAuthor | filter:findBookThroughName">
+            <td>{{item.authorName}}</td>
+            <td>{{item.authorSecName}}</td>
+            <td>{{item.authorLastName}}</td>
+            <td>{{item.autorBDate}}</td>
+            <td>{{item.bookTitle}}</td>
+            <td>{{item.bookGenre}}</td>
+            <td>{{item.bookNumPage}}</td>
+        </tr>
+    </table>
+</div>

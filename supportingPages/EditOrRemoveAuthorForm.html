@@ -1,0 +1,28 @@
+<div ng-controller="authorListCtrl">
+    <div class="page-header">
+        <h2>Author in base</h2>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Second name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tr ng-repeat="author in dataAuthor">
+            <td>{{author.name}}</td>
+            <td>{{author.secname}}</td>
+            <td>{{author.lastname}}</td>
+            <td>{{author.bdate}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="removeAutor(author.id)">&times;</button>
+                <button class="btn btn-default" ng-click="editInfoAboutAthor(author.id)">Edit</button>
+            </td>
+        </tr>
+    </table>
+    <ng-include src="url3"></ng-include>
+    <button type="button" class="btn btn-default" ng-click="closeForm()">Cancel</button>
+</div>

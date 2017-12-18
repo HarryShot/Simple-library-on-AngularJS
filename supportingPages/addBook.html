@@ -1,0 +1,47 @@
+<div ng-controller="authorListCtrl">
+    <div class="page-header">
+        <h2>Book in base</h2>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Number of page</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="book in dataBook">
+            <td>{{book.author}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.numOfPage}}</td>
+
+        </tr>
+    </table>
+    <div class="panel-heading">
+    <h3>
+        <p>Autor: <select class="text-info" ng-model="authorPicker" ng-options="item for item in autorOfBookChoose"></select></p>
+    </h3>
+</div>
+    <form>
+        <div class="form-group">
+            <label for="name">Author last name</label>
+            <input type="text" class="form-control" id="name" ng-model="authorPicker" required readonly>
+        </div>
+        <div class="form-group">
+            <label for="secName">Title of book</label>
+            <input type="text" class="form-control" id="secName" ng-model="bookTitle" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Genre</label>
+            <input type="text" class="form-control" id="lastName" ng-model="bookGenre" required>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Number of page</label>
+            <input type="text" class="form-control" id="dateOfBirth" ng-model="bookNumPage" required>
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="addBookToStorage()">Add</button>
+        <button type="button" class="btn btn-default" ng-click="closeForm()">Cancel</button>
+    </form>
+</div>

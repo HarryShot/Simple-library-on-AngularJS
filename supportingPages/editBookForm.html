@@ -1,0 +1,25 @@
+<div ng-controller="authorListCtrl">
+    <div class="panel-heading">
+        <h3>
+            <button type="button" class="btn btn-default" ng-click="saveBookChanges()">Save</button>
+        </h3>
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="name">Author last name</label>
+            <input type="text" class="form-control" id="name" ng-model="tempBook.author" required readonly>
+        </div>
+        <div class="form-group">
+            <label for="secName">Title of book</label>
+            <input type="text" class="form-control" id="secName" ng-model="tempBook.title" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Genre</label>
+            <input type="text" class="form-control" id="lastName" ng-model="tempBook.genre" required>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Number of page</label>
+            <input type="text" class="form-control" id="dateOfBirth" ng-model="tempBook.numOfPage" required>
+        </div>
+    </form>
+</div>

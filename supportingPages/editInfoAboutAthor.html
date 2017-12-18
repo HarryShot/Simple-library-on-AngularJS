@@ -1,0 +1,25 @@
+<div ng-controller="authorListCtrl">
+    <div class="panel-heading">
+        <h3>
+            <button type="button" class="btn btn-default" ng-click="saveAuthorEdition()">Save</button>
+        </h3>
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="name">Author name</label>
+            <input type="text" class="form-control" id="name" ng-model="tempAuthor.name" required>
+        </div>
+        <div class="form-group">
+            <label for="secName">Author second name</label>
+            <input type="text" class="form-control" id="secName" ng-model="tempAuthor.secname" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Author last name</label>
+            <input type="text" class="form-control" id="lastName" ng-model="tempAuthor.lastname" required>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Date of birth</label>
+            <input type="text" class="form-control" id="dateOfBirth" ng-model="tempAuthor.bdate" jqdatepicker required />
+        </div>
+    </form>
+</div>

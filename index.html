@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="authorList">
+<head>
+    <title>Author list</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="Libs/angular.js"></script>
+    <link rel="stylesheet" href="Libs/bootstrap.css">
+    <link rel="stylesheet" href="Libs/bootstrap-theme.css">
+    <script src="scripts/saver_reader_autor.js"></script>
+    <script src="scripts/module.js"></script>
+    <script src="scripts/controller.js"></script>
+    <script src="scripts/saver_reader_book.js"></script>
+</head>
+<body ng-controller="authorListCtrl">
+<div class="container">
+    <div class="page-header">
+        <h3>Library</h3>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Author name</th>
+            <th>Second name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+            <th>Book title</th>
+            <th>Book genre</th>
+            <th>Number of page in book</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="item in bookWhitAuthor">
+            <td>{{item.authorName}}</td>
+            <td>{{item.authorSecName}}</td>
+            <td>{{item.authorLastName}}</td>
+            <td>{{item.autorBDate}}</td>
+            <td>{{item.bookTitle}}</td>
+            <td>{{item.bookGenre}}</td>
+            <td>{{item.bookNumPage}}</td>
+        </tr>
+    </table>
+    <div>
+        <button type="button" class="btn btn-default" ng-click="addAuthor()">Create new autor</button>
+        <button type="button" class="btn btn-default" ng-click="addBook()">Create new book</button>
+        <button type="button" class="btn btn-default" ng-click="EditOrRemoveBook()">Edit info about book</button>
+        <button type="button" class="btn btn-default" ng-click="EditOrRemoveAuthor()">Edit info about author</button>
+        <button type="button" class="btn btn-default" ng-click="findBookByTitle()">Find book by title</button>
+        <ng-include src="url1"></ng-include>
+    </div>
+</div>
+</body>
+</html>

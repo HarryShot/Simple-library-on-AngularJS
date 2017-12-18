@@ -1,0 +1,44 @@
+<div ng-controller="authorListCtrl">
+    <div class="page-header">
+        <h2>Author in base</h2>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Second name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="author in dataAuthor">
+            <td>{{author.name}}</td>
+            <td>{{author.secname}}</td>
+            <td>{{author.lastname}}</td>
+            <td>{{author.bdate}}</td>
+
+        </tr>
+    </table>
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" ng-model="authorName" required>
+        </div>
+        <div class="form-group">
+            <label for="secName">Second name</label>
+            <input type="text" class="form-control" id="secName" ng-model="authorSecondName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" id="lastName" ng-model="authorLastName" required>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Date of birth</label>
+            <input type="text" class="form-control" id="dateOfBirth" ng-model="authorBdate" jqdatepicker required />
+        </div>
+
+
+        <button type="submit" class="btn btn-default" ng-click="addAutorToStorage()">Add</button>
+        <button type="button" class="btn btn-default" ng-click="closeForm()">Cancel</button>
+    </form>
+</div>
